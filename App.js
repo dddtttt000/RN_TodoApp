@@ -1,5 +1,11 @@
 import { StatusBar } from "expo-status-bar"
-import { StyleSheet, Text, View } from "react-native"
+import {
+  StyleSheet,
+  Text,
+  TouchableHighlight,
+  TouchableOpacity,
+  View,
+} from "react-native"
 import { theme } from "./colors"
 
 export default function App() {
@@ -7,8 +13,12 @@ export default function App() {
     <View style={styles.container}>
       <StatusBar style="auto" />
       <View style={styles.header}>
-        <Text style={styles.btnText}>Work</Text>
-        <Text style={styles.btnText}>Travel</Text>
+        <TouchableOpacity>
+          <Text style={styles.btnText}>Work</Text>
+        </TouchableOpacity>
+        <TouchableHighlight onPress={() => console.log("wow!")}>
+          <Text style={styles.btnText}>Travel</Text>
+        </TouchableHighlight>
       </View>
     </View>
   )
